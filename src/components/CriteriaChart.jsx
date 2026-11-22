@@ -20,7 +20,6 @@ export default function CriteriaChart() {
       <div className="legend">
         <span><i className="swatch" style={{ background: COLORS.yes }} />مستوفى</span>
         <span><i className="swatch" style={{ background: COLORS.no }} />غير مستوفى</span>
-        <span><i className="swatch" style={{ background: COLORS.tbc }} />قيد المراجعة</span>
       </div>
       <div style={{ height: 250 }}>
         <ResponsiveContainer>
