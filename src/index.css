@@ -57,6 +57,11 @@ svg text {
   color: #f7f4ee;
 }
 
+.gate-card h1,
+.gate-card .banner-kicker {
+  text-align: center;
+}
+
 .gate-card h1 {
   color: #fff;
   font-size: 32px;
@@ -65,7 +70,7 @@ svg text {
 .gate-logo {
   height: 84px;
   width: auto;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .gate-card .filter span {
