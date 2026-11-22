@@ -11,6 +11,23 @@ const ALLOWED = new Set([
 ]);
 
 const SESSION_KEY = "promotion-dashboard-access";
+const SESSION_MS = 2 * 60 * 60 * 1000;
+
+function readSession() {
+  const raw = sessionStorage.getItem(SESSION_KEY);
+  if (!raw) return null;
+  try {
+    const session = JSON.parse(raw);
+    if (!session || !ALLOWED.has(session.hash) || !Number.isFinite(session.expires) || Date.now() >= session.expires) {
+      sessionStorage.removeItem(SESSION_KEY);
+      return null;
+    }
+    return session;
+  } catch {
+    sessionStorage.removeItem(SESSION_KEY);
+    return null;
+  }
+}
 
 function rotr(value, bits) {
   return (value >>> bits) | (value << (32 - bits));
@@ -66,12 +83,21 @@ export function digestCode(code) {
 }
 
 export function hasAccess() {
-  return ALLOWED.has(sessionStorage.getItem(SESSION_KEY) ?? "");
+  return Boolean(readSession());
+}
+
+export function accessRemaining() {
+  const session = readSession();
+  return session ? Math.max(0, session.expires - Date.now()) : 0;
+}
+
+export function endAccess() {
+  sessionStorage.removeItem(SESSION_KEY);
 }
 
 export function grantAccess(code) {
   const hash = digestCode(code);
   if (!ALLOWED.has(hash)) return false;
-  sessionStorage.setItem(SESSION_KEY, hash);
+  sessionStorage.setItem(SESSION_KEY, JSON.stringify({ hash, expires: Date.now() + SESSION_MS }));
   return true;
 }

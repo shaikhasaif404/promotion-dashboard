@@ -1,5 +1,5 @@
-import { lazy, Suspense, useState } from "react";
-import { grantAccess, hasAccess } from "./access.js";
+import { lazy, Suspense, useEffect, useState } from "react";
+import { accessRemaining, endAccess, grantAccess, hasAccess } from "./access.js";
 
 const Dashboard = lazy(() => import("./Dashboard.jsx"));
 
@@ -8,6 +8,26 @@ export default function Gate() {
   const [code, setCode] = useState("");
   const [error, setError] = useState(false);
   const [pending, setPending] = useState(false);
+
+  useEffect(() => {
+    if (!allowed) return undefined;
+    const leave = () => {
+      setCode("");
+      setAllowed(false);
+    };
+    const timer = window.setTimeout(() => {
+      endAccess();
+      leave();
+    }, accessRemaining());
+    const onVisible = () => {
+      if (!hasAccess()) leave();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      window.clearTimeout(timer);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [allowed]);
 
   function submit(event) {
     event.preventDefault();
