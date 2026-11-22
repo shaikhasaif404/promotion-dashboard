@@ -43,7 +43,6 @@ export default function BlockerChart() {
   const barColor = statusOn("no") ? COLORS.no : COLORS.gray;
   return (
     <ChartCard title="أسباب عدم الاستيفاء">
-      <p className="blocker-note">عدة أسباب (التقييم السنوي، الساعات التدريبية، المدة المطلوبة، جزاء، الوصول إلى السقف الوظيفي)</p>
       <div style={{ height: Math.max(220, view.blockers.length * 52 + 16) }}>
         <ResponsiveContainer>
           <BarChart
@@ -87,6 +86,7 @@ export default function BlockerChart() {
           </BarChart>
         </ResponsiveContainer>
       </div>
+      <p className="blocker-note">عدة أسباب (التقييم السنوي، الساعات التدريبية، المدة المطلوبة، جزاء، الوصول إلى السقف الوظيفي)</p>
     </ChartCard>
   );
 }

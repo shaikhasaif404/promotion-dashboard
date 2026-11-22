@@ -302,11 +302,11 @@ table.units td.is-muted {
 }
 
 .blocker-note {
-  margin: 8px 0 0;
+  margin: 4px 0 0;
   color: #a67c00;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .panel .recharts-responsive-container {
