@@ -197,11 +197,14 @@ export function UnitTable() {
 function yearLabel(props, rows, total, dataKey) {
   const row = rows[props.index];
   const box = props.viewBox;
-  if (!row?.count || !box || box.height < 16) return null;
+  const x = box?.x ?? props.x;
+  const y = box?.y ?? props.y;
+  const width = box?.width ?? props.width;
+  if (!row?.count || x == null || y == null || width == null) return null;
   const isTop = dataKey === "countOff" ? row.countOff > 0 : row.countOff === 0;
   if (!isTop) return null;
   return (
-    <text x={box.x + box.width / 2} y={box.y - 4} textAnchor="middle" fill="#5e6874" fontSize={10} fontWeight={700}>
+    <text x={x + width / 2} y={Math.max(12, y - 4)} textAnchor="middle" fill="#5e6874" fontSize={10} fontWeight={700}>
       {`${formatNumber(row.count)} (${sharePercent(row.count, total)}%)`}
     </text>
   );
