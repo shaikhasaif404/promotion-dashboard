@@ -3,14 +3,14 @@
 export const source = {
   "file": "DSO_Data.xlsx",
   "sheet": "الكشف (2)",
-  "namedEmployees": 362,
+  "namedEmployees": 359,
   "blankNameRowsExcluded": 0,
-  "hiddenRows": 10
+  "hiddenRows": 13
 };
 
 export const outcome = {
   "entitled": 109,
-  "notEntitled": 253,
+  "notEntitled": 250,
   "tbc": 0
 };
 
@@ -23,7 +23,7 @@ export const outcomeSlices = [
   {
     "key": "no",
     "name": "غير مستوفي",
-    "value": 253
+    "value": 250
   }
 ];
 
@@ -31,7 +31,7 @@ export const outcomeSlices = [
 export const blockers = [
   {
     "label": "المدة المطلوبة",
-    "count": 230
+    "count": 227
   },
   {
     "label": "تجاوز السقف الوظيفي",
@@ -72,30 +72,30 @@ export const criteria = [
   {
     "label": "المدة المطلوبة",
     "met": 111,
-    "notMet": 251,
+    "notMet": 248,
     "open": 0
   },
   {
     "label": "تجاوز السقف الوظيفي",
-    "met": 243,
+    "met": 240,
     "notMet": 119,
     "open": 0
   },
   {
     "label": "الساعات التدريبية",
-    "met": 307,
+    "met": 304,
     "notMet": 55,
     "open": 0
   },
   {
     "label": "التقييم السنوي",
-    "met": 351,
+    "met": 348,
     "notMet": 11,
     "open": 0
   },
   {
     "label": "جزاء أو إنذار",
-    "met": 360,
+    "met": 357,
     "notMet": 2,
     "open": 0
   }
@@ -158,9 +158,9 @@ export const grades = [
   },
   {
     "grade": "7",
-    "headcount": 36,
+    "headcount": 33,
     "yes": 0,
-    "no": 36,
+    "no": 33,
     "tbc": 0,
     "meanBasic": null,
     "meanTotal": null
@@ -207,7 +207,7 @@ export const categories = [
   {
     "label": "D.7",
     "yes": 0,
-    "no": 36,
+    "no": 33,
     "tbc": 0
   }
 ];
@@ -234,7 +234,7 @@ export const orgTypes = [
   {
     "label": "بعثة",
     "yes": 21,
-    "no": 58,
+    "no": 55,
     "tbc": 0
   },
   {
@@ -568,13 +568,13 @@ export const yearsSince = [
   {
     "label": "2–4",
     "yes": 72,
-    "no": 75,
+    "no": 73,
     "tbc": 0
   },
   {
     "label": "4–6",
     "yes": 15,
-    "no": 28,
+    "no": 27,
     "tbc": 0
   },
   {
@@ -595,7 +595,7 @@ export const appraisal = [
   {
     "label": "ممتاز",
     "yes": 73,
-    "no": 151,
+    "no": 148,
     "tbc": 0
   },
   {
@@ -632,7 +632,7 @@ export const expectedYear = [
   },
   {
     "year": "2027",
-    "count": 43
+    "count": 42
   },
   {
     "year": "2028",
@@ -640,7 +640,7 @@ export const expectedYear = [
   },
   {
     "year": "2029",
-    "count": 59
+    "count": 57
   },
   {
     "year": "2030",
