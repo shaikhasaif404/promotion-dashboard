@@ -59,7 +59,7 @@ export const blockers = [
   },
   {
     "label": "التقييم السنوي",
-    "count": 10
+    "count": 11
   },
   {
     "label": "جزاء أو إنذار كتابي",
@@ -77,9 +77,9 @@ export const criteria = [
   },
   {
     "label": "تجاوز السقف الوظيفي",
-    "met": 241,
+    "met": 243,
     "notMet": 119,
-    "open": 2
+    "open": 0
   },
   {
     "label": "الساعات التدريبية",
@@ -90,8 +90,8 @@ export const criteria = [
   {
     "label": "التقييم السنوي",
     "met": 351,
-    "notMet": 10,
-    "open": 1
+    "notMet": 11,
+    "open": 0
   },
   {
     "label": "جزاء أو إنذار",
@@ -607,7 +607,7 @@ export const appraisal = [
   {
     "label": "جيد",
     "yes": 6,
-    "no": 10,
+    "no": 11,
     "tbc": 0
   },
   {
