@@ -28,6 +28,54 @@ body {
   padding: 28px 20px 72px;
 }
 
+.gate {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.gate-card {
+  width: min(440px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  padding: 32px 28px;
+  border-radius: 22px;
+  background: #10283f;
+  color: #f7f4ee;
+}
+
+.gate-card h1 {
+  color: #fff;
+  font-size: 26px;
+}
+
+.gate-logo {
+  height: 84px;
+  width: auto;
+  align-self: flex-start;
+}
+
+.gate-card .filter span {
+  color: rgba(247, 244, 238, 0.8);
+}
+
+.gate-error {
+  margin: 0;
+  color: #f0b4ae;
+  font-weight: 700;
+}
+
+.gate-card .btn-pdf {
+  align-self: flex-start;
+}
+
+.gate-card .btn-pdf:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
 .banner {
   display: flex;
   align-items: center;
