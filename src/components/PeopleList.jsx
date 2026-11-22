@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { formatNumber } from "./chartUi.jsx";
-import { STATUS_LABEL, categoryName, useDashboard } from "../useDashboard.jsx";
+import { STATUS_LABEL, categoryName, displayText, useDashboard } from "../useDashboard.jsx";
 
 export default function PeopleList() {
   const { picked, people, clearPick, showPeople, listTitle } = useDashboard();
@@ -44,7 +44,7 @@ export default function PeopleList() {
                   <td>{person.category ? categoryName(person.category) : "—"}</td>
                   <td className={`status status-${person.status}`}>{STATUS_LABEL[person.status]}</td>
                   <td className="ltr" dir="ltr">{person.service || "—"}</td>
-                  <td className="remark">{person.hrRemark || "—"}</td>
+                  <td className="remark">{person.hrRemark ? displayText(person.hrRemark) : "—"}</td>
                 </tr>
               ))}
             </tbody>

@@ -86,7 +86,7 @@ export default function BlockerChart() {
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <p className="blocker-note">عدة أسباب (التقييم السنوي، الساعات التدريبية، المدة المطلوبة، جزاء، الوصول إلى السقف الوظيفي)</p>
+      <p className="blocker-note">عدة أسباب (التقييم السنوي، الساعات التدريبية، المدة المطلوبة، جزاء، وصول السقف الوظيفي)</p>
     </ChartCard>
   );
 }

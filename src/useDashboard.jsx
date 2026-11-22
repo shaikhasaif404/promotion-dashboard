@@ -29,6 +29,16 @@ export function categoryName(code) {
   return CATEGORY_NAMES[code] ?? code;
 }
 
+const CEILING_LABEL = "وصول السقف الوظيفي";
+
+export function displayText(value) {
+  return String(value ?? "")
+    .replaceAll("تجاوز السقف الوظيفي", CEILING_LABEL)
+    .replaceAll("الوصول إلى السقف الوظيفي", CEILING_LABEL)
+    .replaceAll("الوصول إلى السقف", CEILING_LABEL)
+    .replaceAll("وصل السقف الوظيفي", CEILING_LABEL);
+}
+
 export const REASON_GROUPS = [
   { key: "training", label: "عدم استكمال الساعات التدريبية" },
   { key: "appraisal", label: "التقييم السنوي أقل من جيد" },
@@ -225,7 +235,7 @@ function buildView(filters) {
       .map((row) => {
         const counted = criteriaRows.get(row.label);
         if (!counted) return null;
-        const label = row.label === "تجاوز السقف الوظيفي" ? "الوصول إلى السقف" : row.label;
+        const label = row.label === "تجاوز السقف الوظيفي" ? "وصول السقف الوظيفي" : row.label;
         return { ...counted, label, key: row.label };
       })
       .filter(Boolean),

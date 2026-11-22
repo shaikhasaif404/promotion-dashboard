@@ -29,7 +29,7 @@ export default function CriteriaChart() {
             <YAxis
               type="category"
               dataKey="label"
-              width={150}
+              width={168}
               tick={{ fontSize: 12, fill: "#1b2430" }}
               axisLine={false}
               tickLine={false}
