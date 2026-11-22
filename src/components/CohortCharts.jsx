@@ -14,15 +14,15 @@ function Stacked({ data, categoryKey, height, onPick, rowActive, dense, tick, to
   return (
     <div style={{ height }}>
       <ResponsiveContainer>
-        <BarChart data={data} margin={{ top: 22, right: 8, left: 0, bottom: tick ? 28 : (dense ? 8 : 0) }}>
+        <BarChart data={data} margin={{ top: 28, right: 8, left: 0, bottom: tick ? 44 : (dense ? 8 : 0) }}>
           <XAxis
             dataKey={categoryKey}
             interval={dense ? 0 : undefined}
-            tick={tick ?? { fontSize: dense ? 11 : 12 }}
+            tick={tick ?? { fontSize: 15 }}
             axisLine={false}
             tickLine={false}
           />
-          <YAxis tick={{ fontSize: 12 }} axisLine={false} tickLine={false} width={36} />
+          <YAxis tick={{ fontSize: 15 }} axisLine={false} tickLine={false} width={46} />
           <Tooltip content={tooltip ?? <Tip />} />
           {bars}
         </BarChart>
@@ -43,9 +43,9 @@ function classParts(label) {
 function GradeTick({ x, y, payload }) {
   const [code, ...rest] = categoryName(payload.value).split(" ");
   return (
-    <text x={x} y={y} textAnchor="middle" fill="#1b2430" fontSize={11}>
-      <tspan x={x} dy="14">{code}</tspan>
-      <tspan x={x} dy="14">{rest.join(" ")}</tspan>
+    <text x={x} y={y} textAnchor="middle" fill="#1b2430" fontSize={15}>
+      <tspan x={x} dy="16">{code}</tspan>
+      <tspan x={x} dy="18">{rest.join(" ")}</tspan>
     </text>
   );
 }
@@ -152,7 +152,7 @@ function MissionLabel({ rows, status }) {
         y={box.y - 6}
         textAnchor="middle"
         fill="#243e5a"
-        fontSize={11}
+        fontSize={14}
         fontWeight={700}
       >
         {`${formatNumber(count)} (${share}%)`}
@@ -222,8 +222,8 @@ export function MissionChart() {
       <div style={{ height: 240 }}>
         <ResponsiveContainer>
           <BarChart data={model.rows} margin={{ top: 22, right: 8, left: 0, bottom: 0 }}>
-            <XAxis dataKey="label" tick={{ fontSize: 12 }} axisLine={false} tickLine={false} />
-            <YAxis allowDecimals={false} tick={{ fontSize: 12 }} axisLine={false} tickLine={false} width={36} />
+            <XAxis dataKey="label" tick={{ fontSize: 15 }} axisLine={false} tickLine={false} />
+            <YAxis allowDecimals={false} tick={{ fontSize: 15 }} axisLine={false} tickLine={false} width={46} />
             <Tooltip content={<MissionTip />} />
             <Bar dataKey="yes" name="مستوفي" radius={[3, 3, 0, 0]} isAnimationActive={false} onClick={choose("yes")}>
               {model.rows.map((row) => (

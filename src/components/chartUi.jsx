@@ -172,7 +172,7 @@ export function SplitLabel({ rows, keys, isActive, dataKey, outside = "top" }) {
           textAnchor="middle"
           dominantBaseline="central"
           fill="#fff"
-          fontSize={11}
+          fontSize={14}
           fontWeight={700}
         >
           {wideEnough ? line : (
@@ -194,7 +194,7 @@ export function SplitLabel({ rows, keys, isActive, dataKey, outside = "top" }) {
         textAnchor={atEnd ? "start" : "middle"}
         dominantBaseline={atEnd ? "central" : "auto"}
         fill="#243e5a"
-        fontSize={10}
+        fontSize={14}
         fontWeight={700}
       >
         {line}

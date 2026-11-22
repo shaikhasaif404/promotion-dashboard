@@ -21,8 +21,8 @@ export function OrgTypeChart() {
       <div style={{ height: 240 }}>
         <ResponsiveContainer>
           <BarChart data={view.orgTypes} margin={{ top: 22, right: 8, left: 0, bottom: 0 }}>
-            <XAxis dataKey="label" tick={{ fontSize: 12 }} axisLine={false} tickLine={false} />
-            <YAxis tick={{ fontSize: 12 }} axisLine={false} tickLine={false} width={36} />
+            <XAxis dataKey="label" tick={{ fontSize: 15 }} axisLine={false} tickLine={false} />
+            <YAxis tick={{ fontSize: 15 }} axisLine={false} tickLine={false} width={46} />
             <Tooltip content={<Tip />} />
             {bars}
           </BarChart>
@@ -40,7 +40,7 @@ function horizontalEndLabel(rows, total, dataKey) {
     const isEnd = dataKey === "yesOff" ? row.yesOff > 0 : row.yesOff === 0;
     if (!isEnd) return null;
     return (
-      <text x={box.x + box.width + 6} y={box.y + box.height / 2} dominantBaseline="central" fill="#5e6874" fontSize={11} fontWeight={700}>
+      <text x={box.x + box.width + 6} y={box.y + box.height / 2} dominantBaseline="central" fill="#5e6874" fontSize={15} fontWeight={700}>
         {`${formatNumber(row.yes)} (${sharePercent(row.yes, total)}%)`}
       </text>
     );
@@ -59,12 +59,12 @@ export function UnitChart() {
       <div style={{ height: Math.max(140, view.units.length * 26 + 16) }}>
         <ResponsiveContainer>
           <BarChart data={view.units} layout="vertical" margin={{ top: 4, right: 78, left: 8, bottom: 0 }}>
-            <XAxis type="number" tick={{ fontSize: 12 }} axisLine={false} tickLine={false} />
+            <XAxis type="number" tick={{ fontSize: 15 }} axisLine={false} tickLine={false} />
             <YAxis
               type="category"
               dataKey="unit"
-              width={230}
-              tick={{ fontSize: 11, fill: "#1b2430" }}
+              width={270}
+              tick={{ fontSize: 16, fill: "#1b2430" }}
               axisLine={false}
               tickLine={false}
             />
@@ -134,14 +134,14 @@ function unitBarLabel(rows, dataKey) {
             textAnchor="middle"
             dominantBaseline="central"
             fill={dataKey.endsWith("Off") ? "#1b2430" : "#fff"}
-            fontSize={10}
+            fontSize={14}
             fontWeight={700}
           >
             {text}
           </text>
         ) : null}
         {!later && total ? (
-          <text x={x + width + 6} y={y + height / 2} dominantBaseline="central" fill="#5e6874" fontSize={11} fontWeight={700}>
+          <text x={x + width + 6} y={y + height / 2} dominantBaseline="central" fill="#5e6874" fontSize={15} fontWeight={700}>
             {formatNumber(total)}
           </text>
         ) : null}
@@ -162,29 +162,29 @@ export function UnitTable() {
   return (
     <ChartCard title="حسب القطاع / الإدارة / البعثة">
       <SeriesLegend />
-      <div style={{ height: Math.max(180, rows.length * 28 + 24) }}>
+      <div style={{ height: Math.max(220, rows.length * 36 + 28) }}>
         <ResponsiveContainer>
-          <BarChart data={rows} layout="vertical" margin={{ top: 4, right: 36, left: 8, bottom: 0 }}>
-            <XAxis type="number" tick={{ fontSize: 12 }} axisLine={false} tickLine={false} />
+          <BarChart data={rows} layout="vertical" margin={{ top: 4, right: 52, left: 8, bottom: 0 }}>
+            <XAxis type="number" tick={{ fontSize: 15 }} axisLine={false} tickLine={false} />
             <YAxis
               type="category"
               dataKey="unit"
-              width={230}
-              tick={{ fontSize: 11, fill: "#1b2430" }}
+              width={270}
+              tick={{ fontSize: 16, fill: "#1b2430" }}
               axisLine={false}
               tickLine={false}
             />
             <Tooltip content={<UnitTip />} />
-            <Bar dataKey="yesOn" name="مستوفي" stackId="d" fill={statusOn("yes") ? COLORS.yes : COLORS.gray} barSize={14} isAnimationActive={false} onClick={choose("yes")}>
+            <Bar dataKey="yesOn" name="مستوفي" stackId="d" fill={statusOn("yes") ? COLORS.yes : COLORS.gray} barSize={18} isAnimationActive={false} onClick={choose("yes")}>
               <LabelList content={unitBarLabel(rows, "yesOn")} />
             </Bar>
-            <Bar dataKey="yesOff" name="غير مطابق" stackId="d" fill={COLORS.gray} barSize={14} isAnimationActive={false} onClick={choose("yes")}>
+            <Bar dataKey="yesOff" name="غير مطابق" stackId="d" fill={COLORS.gray} barSize={18} isAnimationActive={false} onClick={choose("yes")}>
               <LabelList content={unitBarLabel(rows, "yesOff")} />
             </Bar>
-            <Bar dataKey="noOn" name="غير مستوفي" stackId="d" fill={statusOn("no") ? COLORS.no : COLORS.gray} barSize={14} isAnimationActive={false} onClick={choose("no")}>
+            <Bar dataKey="noOn" name="غير مستوفي" stackId="d" fill={statusOn("no") ? COLORS.no : COLORS.gray} barSize={18} isAnimationActive={false} onClick={choose("no")}>
               <LabelList content={unitBarLabel(rows, "noOn")} />
             </Bar>
-            <Bar dataKey="noOff" name="غير مطابق" stackId="d" fill={COLORS.gray} radius={[0, 4, 4, 0]} barSize={14} isAnimationActive={false} onClick={choose("no")}>
+            <Bar dataKey="noOff" name="غير مطابق" stackId="d" fill={COLORS.gray} radius={[0, 4, 4, 0]} barSize={18} isAnimationActive={false} onClick={choose("no")}>
               <LabelList content={unitBarLabel(rows, "noOff")} />
             </Bar>
           </BarChart>
@@ -204,7 +204,7 @@ function yearLabel(props, rows, total, dataKey) {
   const isTop = dataKey === "countOff" ? row.countOff > 0 : row.countOff === 0;
   if (!isTop) return null;
   return (
-    <text x={x + width / 2} y={Math.max(12, y - 4)} textAnchor="middle" fill="#5e6874" fontSize={10} fontWeight={700}>
+    <text x={x + width / 2} y={Math.max(16, y - 6)} textAnchor="middle" fill="#5e6874" fontSize={14} fontWeight={700}>
       {`${formatNumber(row.count)} (${sharePercent(row.count, total)}%)`}
     </text>
   );
@@ -219,9 +219,9 @@ export function ExpectedYearChart() {
     >
       <div style={{ height: 240 }}>
         <ResponsiveContainer>
-          <BarChart data={view.expectedYear} margin={{ top: 28, right: 8, left: 0, bottom: 0 }}>
-            <XAxis dataKey="year" tick={{ fontSize: 11 }} axisLine={false} tickLine={false} />
-            <YAxis tick={{ fontSize: 12 }} axisLine={false} tickLine={false} width={36} />
+          <BarChart data={view.expectedYear} margin={{ top: 36, right: 8, left: 0, bottom: 0 }}>
+            <XAxis dataKey="year" tick={{ fontSize: 16 }} axisLine={false} tickLine={false} />
+            <YAxis tick={{ fontSize: 15 }} axisLine={false} tickLine={false} width={46} />
             <Tooltip content={<Tip total={dated} />} />
             <Bar
               dataKey="countOn"

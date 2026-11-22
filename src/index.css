@@ -21,6 +21,7 @@
 
 body {
   margin: 0;
+  font-size: 18px;
 }
 
 button,
@@ -58,7 +59,7 @@ svg text {
 
 .gate-card h1 {
   color: #fff;
-  font-size: 26px;
+  font-size: 32px;
 }
 
 .gate-logo {
@@ -100,13 +101,13 @@ svg text {
 .banner-kicker {
   margin: 0 0 6px;
   color: rgba(247, 244, 238, 0.72);
-  font-size: 13px;
+  font-size: 18px;
 }
 
 .banner h1 {
   margin: 0;
   color: #fff;
-  font-size: 32px;
+  font-size: 38px;
   font-weight: 700;
   letter-spacing: 0;
 }
@@ -114,7 +115,7 @@ svg text {
 .banner-note {
   margin: 10px 0 0;
   color: #85714d;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -130,7 +131,7 @@ svg text {
   border-radius: 999px;
   padding: 9px 16px;
   font: inherit;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 650;
   cursor: pointer;
 }
@@ -145,8 +146,8 @@ svg text {
 
 .btn-clear,
 .btn-pdf {
-  height: 40px;
-  padding: 0 14px;
+  height: 46px;
+  padding: 0 16px;
   white-space: nowrap;
 }
 
@@ -179,7 +180,7 @@ svg text {
   gap: 6px;
   min-width: 0;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .filter-search {
@@ -193,24 +194,24 @@ svg text {
 }
 
 .filter.filter-status {
-  flex: 0 0 132px;
-  width: 132px;
+  flex: 0 0 156px;
+  width: 156px;
 }
 
 .filter.filter-category {
-  flex: 0 0 216px;
-  width: 216px;
+  flex: 0 0 250px;
+  width: 250px;
 }
 
 .filter input,
 .filter select {
-  height: 40px;
+  height: 46px;
   border: 1px solid #e3ddd4;
   border-radius: 12px;
   background: #fff;
   color: var(--ink);
   font: inherit;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .filter input,
@@ -234,25 +235,25 @@ svg text {
 .filter-note {
   margin: 10px 2px 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .empty {
   margin: 12px 0 4px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .eyebrow {
   margin: 0 0 6px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.02em;
 }
 
 h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 650;
   letter-spacing: -0.02em;
 }
@@ -268,7 +269,7 @@ h1 {
   max-width: 68ch;
   margin: 10px 0 0;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .kpis {
@@ -290,13 +291,13 @@ h1 {
 .kpi span {
   display: block;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 17px;
 }
 
 .kpi strong {
   display: block;
   margin-top: 6px;
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.03em;
@@ -321,7 +322,7 @@ table.units td.is-muted {
   border-radius: 10px;
   background: #fbf6ea;
   color: #3d3422;
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .grid-2 {
@@ -355,14 +356,14 @@ table.units td.is-muted {
 
 .panel h2 {
   margin: 0;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 650;
 }
 
 .blocker-note {
   margin: 4px 0 0;
   color: #a67c00;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
 }
@@ -376,7 +377,7 @@ table.units td.is-muted {
   flex-wrap: wrap;
   gap: 12px;
   margin: 8px 0 4px;
-  font-size: 12px;
+  font-size: 16px;
   color: var(--muted);
 }
 
@@ -414,7 +415,7 @@ table.units td.is-muted {
   padding: 7px 8px;
   border-bottom: 1px solid var(--line);
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .outcome-list li.is-active {
@@ -428,7 +429,7 @@ table.units td.is-muted {
 .outcome-list .pct {
   margin-inline-start: 8px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 650;
   unicode-bidi: isolate;
 }
@@ -458,12 +459,12 @@ table.units td.is-muted {
 
 .people-head h2 {
   margin: 0;
-  font-size: 16px;
+  font-size: 22px;
 }
 
 .people-head span {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 17px;
 }
 
 .people-head .btn-clear {
@@ -478,7 +479,7 @@ table.units td.is-muted {
 .people-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 17px;
 }
 
 .people-table th,
@@ -494,7 +495,7 @@ table.units td.is-muted {
   top: 0;
   background: #fff;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -522,7 +523,7 @@ table.units td.is-muted {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 8px 10px;
-  font-size: 12px;
+  font-size: 16px;
   direction: rtl;
 }
 
@@ -531,7 +532,7 @@ table.units td.is-muted {
 table.units {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 17px;
 }
 
 table.units th,
@@ -544,7 +545,7 @@ table.units td {
 table.units th {
   color: var(--muted);
   font-weight: 600;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 table.units td.num,
@@ -556,7 +557,7 @@ table.units th.num {
 .footer {
   margin-top: 22px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 16px;
 }
 
 @media (max-width: 1100px) {

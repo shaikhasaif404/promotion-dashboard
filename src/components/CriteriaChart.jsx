@@ -23,13 +23,13 @@ export default function CriteriaChart() {
       </div>
       <div style={{ height: 250 }}>
         <ResponsiveContainer>
-          <BarChart data={view.criteria} layout="vertical" margin={{ top: 4, right: 72, left: 4, bottom: 0 }}>
-            <XAxis type="number" tick={{ fontSize: 12 }} axisLine={false} tickLine={false} />
+          <BarChart data={view.criteria} layout="vertical" margin={{ top: 4, right: 88, left: 4, bottom: 0 }}>
+            <XAxis type="number" tick={{ fontSize: 15 }} axisLine={false} tickLine={false} />
             <YAxis
               type="category"
               dataKey="label"
-              width={168}
-              tick={{ fontSize: 12, fill: "#1b2430" }}
+              width={210}
+              tick={{ fontSize: 16, fill: "#1b2430" }}
               axisLine={false}
               tickLine={false}
             />

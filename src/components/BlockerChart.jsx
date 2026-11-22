@@ -9,7 +9,7 @@ function endLabel(props, rows, dataKey) {
   const isEnd = dataKey === "countOff" ? row.countOff > 0 : row.countOff === 0;
   if (!isEnd) return null;
   return (
-    <text x={box.x + box.width + 6} y={box.y + box.height / 2} dominantBaseline="central" fill="#5e6874" fontSize={11} fontWeight={700}>
+    <text x={box.x + box.width + 6} y={box.y + box.height / 2} dominantBaseline="central" fill="#5e6874" fontSize={15} fontWeight={700}>
       {formatNumber(row.count)}
     </text>
   );
@@ -40,11 +40,11 @@ function ReasonTick({ x, y, payload }) {
   const lines = breakAt > 0
     ? [text.slice(0, breakAt), text.slice(breakAt + 1)]
     : [text];
-  const start = lines.length > 1 ? -7 : 4;
+  const start = lines.length > 1 ? -10 : 5;
   return (
-    <text x={x} y={y} textAnchor="end" fill="#1b2430" fontSize={11}>
+    <text x={x} y={y} textAnchor="end" fill="#1b2430" fontSize={15}>
       {lines.map((line, index) => (
-        <tspan key={line} x={x - 8} dy={index === 0 ? start : 14}>{line}</tspan>
+        <tspan key={line} x={x - 8} dy={index === 0 ? start : 18}>{line}</tspan>
       ))}
     </text>
   );
@@ -56,18 +56,18 @@ export default function BlockerChart() {
   const barColor = statusOn("no") ? COLORS.no : COLORS.gray;
   return (
     <ChartCard title="أسباب عدم الاستيفاء (دون استكمال المدة المطلوبة للترقية)">
-      <div style={{ height: Math.max(220, view.blockers.length * 52 + 16) }}>
+      <div style={{ height: Math.max(240, view.blockers.length * 64 + 16) }}>
         <ResponsiveContainer>
           <BarChart
             data={view.blockers}
             layout="vertical"
-            margin={{ top: 4, right: 40, left: 8, bottom: 0 }}
+            margin={{ top: 4, right: 52, left: 8, bottom: 0 }}
           >
-            <XAxis type="number" tick={{ fontSize: 12 }} axisLine={false} tickLine={false} />
+            <XAxis type="number" tick={{ fontSize: 15 }} axisLine={false} tickLine={false} />
             <YAxis
               type="category"
               dataKey="label"
-              width={210}
+              width={248}
               tick={ReasonTick}
               axisLine={false}
               tickLine={false}

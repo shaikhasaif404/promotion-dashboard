@@ -16,7 +16,7 @@ function SliceLabel({ cx, cy, midAngle, innerRadius, outerRadius, percent }) {
       textAnchor="middle"
       dominantBaseline="central"
       fill="#fff"
-      fontSize={12}
+      fontSize={16}
       fontWeight={700}
     >
       {sharePercent(percent * 100, 100)}%
