@@ -10,7 +10,8 @@
   --navy: #243e5a;
   --teal: #3e7c8a;
   --shadow: 0 1px 0 rgba(27, 36, 48, 0.04);
-  font-family: "Segoe UI", Tahoma, sans-serif;
+  --font: "Sakkal Majalla", "Segoe UI", Tahoma, serif;
+  font-family: var(--font);
   color: var(--ink);
   background: var(--paper);
   line-height: 1.5;
@@ -20,6 +21,15 @@
 
 body {
   margin: 0;
+}
+
+button,
+input,
+select,
+textarea,
+svg,
+svg text {
+  font-family: var(--font);
 }
 
 .app {
