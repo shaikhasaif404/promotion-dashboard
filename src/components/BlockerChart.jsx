@@ -1,8 +1,8 @@
 import { Bar, BarChart, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import { COLORS, ChartCard, Tip, formatNumber, sharePercent, useHighlight } from "./chartUi.jsx";
+import { COLORS, ChartCard, formatNumber, useHighlight } from "./chartUi.jsx";
 import { useDashboard } from "../useDashboard.jsx";
 
-function endLabel(props, rows, total, dataKey) {
+function endLabel(props, rows, dataKey) {
   const row = rows[props.index];
   const box = props.viewBox;
   if (!row?.count || !box) return null;
@@ -10,8 +10,22 @@ function endLabel(props, rows, total, dataKey) {
   if (!isEnd) return null;
   return (
     <text x={box.x + box.width + 6} y={box.y + box.height / 2} dominantBaseline="central" fill="#5e6874" fontSize={11} fontWeight={700}>
-      {`${formatNumber(row.count)} (${sharePercent(row.count, total)}%)`}
+      {formatNumber(row.count)}
     </text>
+  );
+}
+
+function BlockerTip({ active, payload, label }) {
+  if (!active || !payload?.length) return null;
+  const visible = payload.filter((item) => Number(item.value));
+  if (!visible.length) return null;
+  return (
+    <div className="tip">
+      {label ? <strong>{label}</strong> : null}
+      {visible.map((item) => (
+        <div key={item.dataKey}>{item.name}: {formatNumber(item.value)}</div>
+      ))}
+    </div>
   );
 }
 
@@ -39,16 +53,15 @@ function ReasonTick({ x, y, payload }) {
 export default function BlockerChart() {
   const { view, pick } = useDashboard();
   const { statusOn } = useHighlight();
-  const total = view.blockers.reduce((sum, row) => sum + row.count, 0);
   const barColor = statusOn("no") ? COLORS.no : COLORS.gray;
   return (
-    <ChartCard title="أسباب عدم الاستيفاء">
+    <ChartCard title="أسباب عدم الاستيفاء (دون استكمال المدة المطلوبة للترقية)">
       <div style={{ height: Math.max(220, view.blockers.length * 52 + 16) }}>
         <ResponsiveContainer>
           <BarChart
             data={view.blockers}
             layout="vertical"
-            margin={{ top: 4, right: 72, left: 8, bottom: 0 }}
+            margin={{ top: 4, right: 40, left: 8, bottom: 0 }}
           >
             <XAxis type="number" tick={{ fontSize: 12 }} axisLine={false} tickLine={false} />
             <YAxis
@@ -59,7 +72,7 @@ export default function BlockerChart() {
               axisLine={false}
               tickLine={false}
             />
-            <Tooltip content={<Tip total={total} />} />
+            <Tooltip content={<BlockerTip />} />
             <Bar
               dataKey="countOn"
               name="غير مستوفي"
@@ -69,7 +82,7 @@ export default function BlockerChart() {
               isAnimationActive={false}
               onClick={(row) => pick({ title: row.label, status: "no", reasonGroup: row.key })}
             >
-              <LabelList content={(props) => endLabel(props, view.blockers, total, "countOn")} />
+              <LabelList content={(props) => endLabel(props, view.blockers, "countOn")} />
             </Bar>
             <Bar
               dataKey="countOff"
@@ -81,12 +94,12 @@ export default function BlockerChart() {
               isAnimationActive={false}
               onClick={(row) => pick({ title: row.label, status: "no", reasonGroup: row.key })}
             >
-              <LabelList content={(props) => endLabel(props, view.blockers, total, "countOff")} />
+              <LabelList content={(props) => endLabel(props, view.blockers, "countOff")} />
             </Bar>
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <p className="blocker-note">عدة أسباب (التقييم السنوي، الساعات التدريبية، المدة المطلوبة، جزاء، وصول السقف الوظيفي)</p>
+      <p className="blocker-note">عدة أسباب (التقييم السنوي، الساعات التدريبية، جزاء، وصول السقف الوظيفي)</p>
     </ChartCard>
   );
 }
