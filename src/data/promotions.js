@@ -3,14 +3,14 @@
 export const source = {
   "file": "DSO_Data.xlsx",
   "sheet": "الكشف (2)",
-  "namedEmployees": 359,
+  "namedEmployees": 358,
   "blankNameRowsExcluded": 0,
-  "hiddenRows": 13
+  "hiddenRows": 14
 };
 
 export const outcome = {
   "entitled": 109,
-  "notEntitled": 250,
+  "notEntitled": 249,
   "tbc": 0
 };
 
@@ -23,7 +23,7 @@ export const outcomeSlices = [
   {
     "key": "no",
     "name": "غير مستوفي",
-    "value": 250
+    "value": 249
   }
 ];
 
@@ -31,7 +31,7 @@ export const outcomeSlices = [
 export const blockers = [
   {
     "label": "المدة المطلوبة",
-    "count": 227
+    "count": 226
   },
   {
     "label": "تجاوز السقف الوظيفي",
@@ -54,12 +54,12 @@ export const blockers = [
     "count": 19
   },
   {
-    "label": "إعارة/ انتداب",
+    "label": "التقييم السنوي",
     "count": 11
   },
   {
-    "label": "التقييم السنوي",
-    "count": 11
+    "label": "إعارة/ انتداب",
+    "count": 10
   },
   {
     "label": "جزاء أو إنذار كتابي",
@@ -72,30 +72,30 @@ export const criteria = [
   {
     "label": "المدة المطلوبة",
     "met": 111,
-    "notMet": 248,
+    "notMet": 247,
     "open": 0
   },
   {
     "label": "تجاوز السقف الوظيفي",
-    "met": 240,
+    "met": 239,
     "notMet": 119,
     "open": 0
   },
   {
     "label": "الساعات التدريبية",
-    "met": 304,
+    "met": 303,
     "notMet": 55,
     "open": 0
   },
   {
     "label": "التقييم السنوي",
-    "met": 348,
+    "met": 347,
     "notMet": 11,
     "open": 0
   },
   {
     "label": "جزاء أو إنذار",
-    "met": 357,
+    "met": 356,
     "notMet": 2,
     "open": 0
   }
@@ -158,9 +158,9 @@ export const grades = [
   },
   {
     "grade": "7",
-    "headcount": 33,
+    "headcount": 32,
     "yes": 0,
-    "no": 33,
+    "no": 32,
     "tbc": 0,
     "meanBasic": null,
     "meanTotal": null
@@ -207,7 +207,7 @@ export const categories = [
   {
     "label": "D.7",
     "yes": 0,
-    "no": 33,
+    "no": 32,
     "tbc": 0
   }
 ];
@@ -240,7 +240,7 @@ export const orgTypes = [
   {
     "label": "أخرى",
     "yes": 10,
-    "no": 12,
+    "no": 11,
     "tbc": 0
   }
 ];
@@ -348,9 +348,9 @@ export const units = [
   {
     "unit": "مجلس التعاون لدول الخليج العربية (الأمانة العامة في الرياض)",
     "yes": 3,
-    "no": 4,
+    "no": 3,
     "tbc": 0,
-    "total": 7
+    "total": 6
   },
   {
     "unit": "إدارة الدراسات والتقييم",
@@ -568,7 +568,7 @@ export const yearsSince = [
   {
     "label": "2–4",
     "yes": 72,
-    "no": 73,
+    "no": 72,
     "tbc": 0
   },
   {
@@ -607,7 +607,7 @@ export const appraisal = [
   {
     "label": "جيد",
     "yes": 6,
-    "no": 11,
+    "no": 10,
     "tbc": 0
   },
   {
@@ -644,7 +644,7 @@ export const expectedYear = [
   },
   {
     "year": "2030",
-    "count": 22
+    "count": 21
   },
   {
     "year": "2031",
