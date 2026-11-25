@@ -1,6 +1,6 @@
 /**
  * Rebuild src/data/employees.js and src/data/promotions.js from DSO_Data.xlsx.
- * Sheet: الكشف (2). Names stay; CPR and employee ID are not copied.
+ * Sheet: الكشف (4). Names stay; CPR and employee ID are not copied.
  *
  * Run from the project folder:
  *   powershell -File scripts/import-data.ps1
@@ -13,7 +13,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const workbookPath = path.join(root, "src", "data", "DSO_Data.xlsx");
-const SHEET_NAME = "الكشف (2)";
+const SHEET_NAME = "الكشف (4)";
 
 const CHECKS = [
   { match: "الساعات التدريبية", label: "الساعات التدريبية" },
@@ -383,7 +383,7 @@ function build(rows, columns) {
           ...String(cells[columns.reason] || "").split("//").map(reasonPart).filter(Boolean),
           ...failedChecks,
         ])].join(" // "),
-      /** HR remark: column BS on الكشف (2). */
+      /** HR remark: column BS on الكشف (4). */
       hrRemark: cleanText(cells.BS),
       /** Written penalty: column N, جزاء أو إنذار كتابي. */
       penaltyNote: cleanText(cells.N),
