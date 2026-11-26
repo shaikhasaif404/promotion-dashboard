@@ -26,7 +26,7 @@ export default function App() {
         <div className="banner-copy">
           <p className="banner-kicker">لجنة شؤون أعضاء السلك الدبلوماسي والقنصلي</p>
           <h1>احصائيات مقترح الترقيات لسنة 2026</h1>
-          <p className="banner-note">*حتى وزير مفوض دون مديري الإدارات ورؤساء القطاعات</p>
+          <p className="banner-note">*حتى وزير مفوض دون مديري الإدارات ورؤساء القطاعات ورؤساء البعثات</p>
         </div>
         <img className="banner-logo" src={`${import.meta.env.BASE_URL}mofa-logo.png`} alt="وزارة الخارجية" />
       </header>
