@@ -31,7 +31,7 @@ export default function PeopleList() {
                 <th>الفئة</th>
                 <th>الاستيفاء</th>
                 <th>سنوات الخدمة</th>
-                <th>ملاحظة الموارد البشرية</th>
+                <th>سبب عدم الاستيفاء</th>
               </tr>
             </thead>
             <tbody>
