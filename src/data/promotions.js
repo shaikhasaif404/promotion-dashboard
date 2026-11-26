@@ -31,7 +31,7 @@ export const outcomeSlices = [
 export const blockers = [
   {
     "label": "المدة المطلوبة",
-    "count": 223
+    "count": 224
   },
   {
     "label": "المجمع الوظيفي",
@@ -43,7 +43,7 @@ export const blockers = [
   },
   {
     "label": "تجاوز السقف الوظيفي",
-    "count": 35
+    "count": 34
   },
   {
     "label": "الالتحاق بالوزارة خلال 2026",
@@ -71,14 +71,14 @@ export const blockers = [
 export const criteria = [
   {
     "label": "المدة المطلوبة",
-    "met": 133,
-    "notMet": 225,
+    "met": 132,
+    "notMet": 226,
     "open": 0
   },
   {
     "label": "تجاوز السقف الوظيفي",
-    "met": 321,
-    "notMet": 37,
+    "met": 322,
+    "notMet": 36,
     "open": 0
   },
   {
@@ -597,27 +597,27 @@ export const appraisal = [
 export const expectedYear = [
   {
     "year": "2026",
-    "count": 117
+    "count": 116
   },
   {
     "year": "2027",
-    "count": 40
+    "count": 41
   },
   {
     "year": "2028",
-    "count": 114
+    "count": 113
   },
   {
     "year": "2029",
-    "count": 56
+    "count": 55
   },
   {
     "year": "2030",
-    "count": 21
+    "count": 22
   },
   {
     "year": "2031",
-    "count": 8
+    "count": 9
   },
   {
     "year": "2032",
